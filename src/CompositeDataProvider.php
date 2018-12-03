@@ -163,9 +163,9 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
 
         $pag = $this->getPagination();
         if ($pag) {
+            $pag->totalCount = $this->getTotalCount();
             $offset = $pag->getOffset();
             $limit = $pag->getLimit();
-            $pag->totalCount = $this->getTotalCount();
         } else {
             $offset = 0;
             $limit = $this->getTotalCount();
