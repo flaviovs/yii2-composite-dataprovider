@@ -106,6 +106,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
 
         $this->assertEquals(4, $cdp->getTotalCount());
 
+        $this->assertEquals(4, $dp->getCount());
         $this->assertEquals($dp->allModels, $models);
         $this->assertEquals(['key1', 'key2', 'key3', 'key4'], $keys);
     }
@@ -132,6 +133,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $this->assertCount(4, $models);
         $this->assertCount(4, $keys);
 
+        $this->assertEquals(4, $cdp->getCount());
         $this->assertEquals(4, $cdp->getTotalCount());
 
         //$this->assertEquals($data, $models);
@@ -157,6 +159,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $this->assertCount(8, $models);
         $this->assertCount(8, $keys);
 
+        $this->assertEquals(8, $cdp->getCount());
         $this->assertEquals(8, $cdp->getTotalCount());
 
         $this->assertEquals(
@@ -192,6 +195,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $this->assertCount(8, $models);
         $this->assertCount(8, $keys);
 
+        $this->assertEquals(8, $cdp->getCount());
         $this->assertEquals(8, $cdp->getTotalCount());
 
         $this->assertEquals(
@@ -243,6 +247,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $models = $cdp->getModels();
         $keys = $cdp->getKeys();
 
+        $this->assertEquals(3, $cdp->getCount());
         $this->assertEquals(['key4', 'key5', 'key6'], $keys);
         $this->assertEquals(
             [
@@ -260,6 +265,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $models = $cdp->getModels();
         $keys = $cdp->getKeys();
 
+        $this->assertEquals(2, $cdp->getCount());
         $this->assertEquals(['key7', 'key8'], $keys);
         $this->assertEquals(
             [
@@ -296,6 +302,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $models = $cdp->getModels();
         $keys = $cdp->getKeys();
 
+        $this->assertEquals(2, $cdp->getCount());
         $this->assertEquals(['key1', 'key2'], $keys);
         $this->assertEquals(
             [
@@ -312,6 +319,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $models = $cdp->getModels();
         $keys = $cdp->getKeys();
 
+        $this->assertEquals(2, $cdp->getCount());
         $this->assertEquals(['key3', 'key4'], $keys);
         $this->assertEquals(
             [
@@ -328,6 +336,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $models = $cdp->getModels();
         $keys = $cdp->getKeys();
 
+        $this->assertEquals(2, $cdp->getCount());
         $this->assertEquals(['key5', 'key6'], $keys);
         $this->assertEquals(
             [
@@ -344,6 +353,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $models = $cdp->getModels();
         $keys = $cdp->getKeys();
 
+        $this->assertEquals(2, $cdp->getCount());
         $this->assertEquals(['key7', 'key8'], $keys);
         $this->assertEquals(
             [
@@ -397,6 +407,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
             ],
         ]);
 
+        $this->assertEquals(4, $cdp->getCount());
         $this->assertEquals(9, $cdp->getTotalCount());
 
         $models = $cdp->getModels();
@@ -420,6 +431,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $models = $cdp->getModels();
         $keys = $cdp->getKeys();
 
+        $this->assertEquals(4, $cdp->getCount());
         $this->assertEquals(['key5', 'key6', 'key7', 'key8'], $keys);
         $this->assertEquals(
             [
@@ -439,6 +451,7 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $models = $cdp->getModels();
         $keys = $cdp->getKeys();
 
+        $this->assertEquals(1, $cdp->getCount());
         $this->assertEquals(['key9'], $keys);
         $this->assertEquals(
             [

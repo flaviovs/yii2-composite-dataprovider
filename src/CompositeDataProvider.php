@@ -109,6 +109,9 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
 
     public function getCount()
     {
+        return $this->getPagination()
+            ? count($this->getModels())
+            : $this->getTotalCount();
     }
 
 
