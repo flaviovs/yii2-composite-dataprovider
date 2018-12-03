@@ -146,18 +146,6 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
     }
 
 
-    protected function resetCounters()
-    {
-        $this->_totalCount = 0;
-        $this->counts = [];
-        foreach ($this->providers as $p) {
-            $c = $p->getTotalCount();
-            $this->_totalCount += $c;
-            $this->counts[] = $c;
-        }
-    }
-
-
     public function prepare($forcePrepare = false)
     {
         if ($this->models !== null && !$forcePrepare) {
