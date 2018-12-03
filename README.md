@@ -11,6 +11,14 @@ CDPs will always paginate using the composite pagination configuration
 (if any).
 
 
+Installation
+------------
+
+```
+composer require flaviovs/yii2-composite-dataprovider
+```
+
+
 Usage
 -----
 
