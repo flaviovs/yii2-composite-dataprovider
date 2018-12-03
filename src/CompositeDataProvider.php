@@ -19,10 +19,10 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
     protected $keys;
 
     // phpcs:disable PSR2.Classes.PropertyDeclaration.Underscore
-    protected $_totalCount;
+    protected $_totalCount = 0;
     // phpcs:enable PSR2.Classes.PropertyDeclaration.Underscore
 
-    protected $counts;
+    protected $counts = [];
 
     protected static $instanceCount = 0;
 
@@ -58,6 +58,11 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
         }
 
         $this->providers[] = $value;
+
+        $count = $value->getTotalCount();;
+
+        $this->_totalCount += $count;
+        $this->counts[] = $count;
 
         $this->models = $this->keys = null;
     }
@@ -134,6 +139,13 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
     }
 
 
+
+    public function getTotalCount()
+    {
+        return $this->_totalCount;
+    }
+
+
     protected function resetCounters()
     {
         $this->_totalCount = 0;
@@ -143,16 +155,6 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
             $this->_totalCount += $c;
             $this->counts[] = $c;
         }
-    }
-
-
-    public function getTotalCount()
-    {
-        if ($this->_totalCount === null) {
-            $this->resetCounters();
-        }
-
-        return $this->_totalCount;
     }
 
 
