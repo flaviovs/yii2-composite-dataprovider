@@ -12,13 +12,13 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
 
     protected $providers = [];
 
-    protected $pagination;
-
     protected $models;
 
     protected $keys;
 
     // phpcs:disable PSR2.Classes.PropertyDeclaration.Underscore
+    protected $_pagination;
+
     protected $_totalCount = 0;
     // phpcs:enable PSR2.Classes.PropertyDeclaration.Underscore
 
@@ -84,10 +84,10 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
 
     public function getPagination()
     {
-        if ($this->pagination === null) {
+        if ($this->_pagination === null) {
             $this->setPagination([]);
         }
-        return $this->pagination;
+        return $this->_pagination;
     }
 
 
@@ -101,9 +101,9 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
                 $config['pageParam'] = $this->id . '-page';
                 $config['pageSizeParam'] = $this->id . '-per-page';
             }
-            $this->pagination = \Yii::createObject($config);
+            $this->_pagination = \Yii::createObject($config);
         } elseif ($config instanceof Pagination || $config === false) {
-            $this->pagination = $config;
+            $this->_pagination = $config;
         } else {
             throw new InvalidArgumentException(
                 'Only Pagination instance, configuration array or false is allowed.'
