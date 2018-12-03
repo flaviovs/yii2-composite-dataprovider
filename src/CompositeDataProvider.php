@@ -177,6 +177,7 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
         if ($pag) {
             $offset = $pag->getOffset();
             $limit = $pag->getLimit();
+            $pag->totalCount = $this->getTotalCount();
         } else {
             $offset = 0;
             $limit = $this->getTotalCount();

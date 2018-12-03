@@ -481,4 +481,19 @@ class CompositeDataProviderTest extends \Codeception\Test\Unit
         $this->assertEquals(8, $cdp->getTotalCount());
 
     }
+
+
+    public function testPaginationTotalCountUpdate()
+    {
+        $cdp = new CompositeDataProvider([
+            'dataProviders' => [$this->newDataProvider(4)],
+            'pagination' => [
+                'pageSize' => 2,
+            ],
+        ]);
+        $cdp->prepare();
+
+        $this->assertEquals(4, $cdp->pagination->totalCount);
+
+    }
 }
