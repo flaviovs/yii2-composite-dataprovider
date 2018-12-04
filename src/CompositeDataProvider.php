@@ -195,7 +195,7 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
                 $page_size = $this->counts[$i];
             }
 
-            $starting_page = floor($offset / $page_size);
+            $starting_page = (int)($offset / $page_size);
             $page_offset = $offset % $page_size;
 
             for ($j = $starting_page; $j < $nr_pages && $limit > 0; $j++) {
