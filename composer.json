@@ -18,7 +18,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "flaviovs\\yii\\data\\": "src/"
+            "fv\\yii\\data\\": "src/"
         }
     },
     "require": {

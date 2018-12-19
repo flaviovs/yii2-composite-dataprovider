@@ -5,7 +5,7 @@ namespace fv\test;
 use yii\data\DataProviderInterface;
 use yii\data\ArrayDataProvider;
 
-use flaviovs\yii\data\CompositeDataProvider;
+use fv\yii\data\CompositeDataProvider;
 
 class CompositeDataProviderTest extends \Codeception\Test\Unit
 {

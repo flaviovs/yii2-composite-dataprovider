@@ -1,6 +1,6 @@
 <?php
 
-namespace flaviovs\yii\data;
+namespace fv\yii\data;
 
 use yii\data\DataProviderInterface;
 use yii\base\InvalidCallException;

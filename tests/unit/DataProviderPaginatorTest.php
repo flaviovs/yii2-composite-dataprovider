@@ -5,7 +5,7 @@ namespace fv\test;
 use yii\data\ArrayDataProvider;
 use yii\base\InvalidCallException;
 
-use flaviovs\yii\data\DataProviderPaginator;
+use fv\yii\data\DataProviderPaginator;
 
 class DataProviderPaginatorTest extends \Codeception\Test\Unit
 {
