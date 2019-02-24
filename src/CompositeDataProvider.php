@@ -59,7 +59,7 @@ class CompositeDataProvider extends \yii\base\BaseObject implements \yii\data\Da
 
         $this->providers[] = $value;
 
-        $count = $value->getTotalCount();;
+        $count = $value->getTotalCount();
 
         $this->_totalCount += $count;
         $this->counts[] = $count;
