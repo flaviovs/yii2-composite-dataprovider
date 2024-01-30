@@ -17,7 +17,7 @@ class DataProviderPaginator implements \Countable, \ArrayAccess
     }
 
 
-    public function count()
+    public function count(): int
     {
         if ($this->pagination) {
             $this->dataProvider->prepare();
@@ -30,13 +30,13 @@ class DataProviderPaginator implements \Countable, \ArrayAccess
     }
 
 
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return $offset >= 0 && $offset < $this->count();
     }
 
 
-    public function offsetGet($offset)
+    public function offsetGet(mixed: $offset) mixed
     {
         if ($this->pagination) {
             $cur_page = $this->pagination->getPage();
@@ -58,13 +58,13 @@ class DataProviderPaginator implements \Countable, \ArrayAccess
     }
 
 
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         throw new InvalidCallException('DataProvider is read-only');
     }
 
 
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         throw new InvalidCallException('DataProvider is read-only');
     }

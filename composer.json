@@ -12,7 +12,7 @@
     ],
     "authors": [
         {
-            "name": "Flávio Veloso",
+            "name": "Flávio Veloso Soares",
             "email": "flaviovs@magnux.com"
         }
     ],
@@ -22,10 +22,15 @@
         }
     },
     "require": {
-        "php": ">=5.6.0"
+        "php": ">=8.2.0"
     },
     "require-dev": {
-        "yiisoft/yii2": "~2.0.0",
-        "codeception/codeception": "^2.4"
+        "yiisoft/yii2": "^2.0",
+        "codeception/codeception": "^1.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
     }
 }
