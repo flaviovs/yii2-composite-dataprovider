@@ -36,7 +36,7 @@ class DataProviderPaginator implements \Countable, \ArrayAccess
     }
 
 
-    public function offsetGet(mixed: $offset) mixed
+    public function offsetGet(mixed $offset): mixed
     {
         if ($this->pagination) {
             $cur_page = $this->pagination->getPage();
